@@ -1,0 +1,87 @@
+{% extends 'base.html' %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style></style>
+  <body>
+    <!-- <div class="container">
+      {%for x in vid %}
+      <h3 class="text-center mt-2 mb-3">{{x.caption}}</h3>
+      <video
+        class="embed-responsive embed-responsive-16by9"
+        controls="controls"
+      >
+        <source src="{{x.video.url}}" type="video/mp4" />
+      </video>
+      {%endfor%}
+    </div>
+    {%for x in vid %}
+    <div class="col-md-8 mt-3 ">
+      <div class="card mb-3">
+        <video
+        class="embed-responsive embed-responsive-4by3"
+        controls="controls"
+      > <source src="{{x.video.url}}" type="video/mp4" />
+    </video>
+        <div class="card-body">
+          <h5 class="card-title">{{x.caption}}</h5>
+          <hr />
+         
+        </div>
+        
+      </div>
+      {%endfor%} -->
+    <!-- <div class="d-flex flex-wrap">
+      {%for x in vid %}
+      <video
+        class="embed-responsive embed-responsive-21by9"
+        controls="controls"
+      >
+        <source src="{{x.video.url}}" type="video/mp4" />
+      </video>
+      <div class="px-3 mb-5">
+        <div class="d-flex justify-content-start">{{x.caption}}</div>
+      </div>
+      {%endfor%}
+    </div> -->
+
+    
+    <!-- {%for x in vid %}
+    <video width="320" height="240" controls>
+      <source src="{{x.video.url}}" type="video/mp4" />
+    </video>
+    {%endfor%} -->
+
+    <main class="container mt-3 mb-5">
+      <h3 class="border-bottom pb-1 my-4">All Videos</h3>
+      <div class="row">
+        <!-- Category Box -->
+        {% for x in vid %}
+        <div class="col-md-4">
+          <div class="card mb-3 shadow">
+            <video width="320" height="240" controls class="mr-3">
+              <source src="{{x.video.url}}" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">{{x.caption}}</h5>
+              <hr />
+              <!-- <p class="card-text">
+                <a href="category/{{cat.id}}" class="btn btn-sm btn-primary"
+                  >All News</a
+                >
+              </p> -->
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </main>
+  </body>
+</html>
+{% endblock %}
